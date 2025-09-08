@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Surpresa</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      font-size: 1rem;
+    }
+
+    /* Título com efeito de digitação */
+    h1 {
+      margin: 0 0 28px;
+      font-weight: bold;
+      color: #d6336c;
+      white-space: nowrap;
+      border-right: 2px solid #ffdde1;
+      overflow: hidden;
+      width: 0;
+      animation: typing 3s steps(28, end) forwards, blink .8s step-end infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0
+      }
+
+      to {
+        width: 28ch
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent
+      }
+    }
+
+    .buttons {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    button {
+      padding: 12px 22px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform .25s ease, background .25s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .2);
+    }
+
+    #sim {
+      background: #4CAF50;
+      color: #fff;
+    }
+
+    #sim:hover {
+      background: #3e8e41;
+    }
+
+    #nao {
+      background: #f44336;
+      color: #fff;
+      position: relative;
+    }
+
+    #countdown {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.6rem;
+      color: #d6336c;
+      font-weight: 400;
+    }
+
+
+    /* Media query para celulares */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem;
+        width: 15ch;
+        /* ajusta largura do efeito de digitação */
+      }
+
+
+      .buttons {
+        flex-direction: row;
+        gap: 12px;
+      }
+
+      button {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Está preparado para a surpresa?</h1>
+
+  <div class="buttons" id="botoes">
+    <button id="sim">Sim</button>
+    <button id="nao">Não</button>
+  </div>
+
+  <div id="countdown" aria-live="polite"></div>
+
+  <script>
+    const nao = document.getElementById('nao');
+
+    function fugir() {
+      // Ajusta os limites dependendo do tamanho da tela
+      const maxX = window.innerWidth <= 480 ? 100 : 180;
+      const maxY = window.innerWidth <= 480 ? 60 : 120;
+
+      const x = (Math.random() * 2 - 1) * maxX;
+      const y = (Math.random() * 2 - 1) * maxY;
+      nao.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    nao.addEventListener('mouseenter', fugir);
+    nao.addEventListener('mousedown', (e) => { e.preventDefault(); fugir(); });
+
+    const simBtn = document.getElementById('sim');
+    const botoes = document.getElementById('botoes');
+    const countdown = document.getElementById('countdown');
+
+    simBtn.addEventListener('click', () => {
+      botoes.style.display = 'none';
+      countdown.style.display = 'block';
+
+      let t = 3; // tempo da contagem
+      countdown.textContent = `A surpresa começa em ${t}...`;
+
+      const timer = setInterval(() => {
+        t--;
+        countdown.textContent = `A surpresa começa em ${t}...`;
+        if (t <= 0) {
+          clearInterval(timer);
+          window.location.href = './index.html'; // redireciona
+        }
+      }, 1000);
+    });
+  </script>
+</body>
+
+</html>
