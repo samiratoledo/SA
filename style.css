@@ -201,4 +201,41 @@
 
   }
 
+/*envelope*/
+.envelope {
+  width: 200px;
+  height: 120px;
+  background: #ff8fab;
+  margin: 30px auto;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 5px;
+}
 
+.envelope .flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: #ff4d6d;
+  transform-origin: top;
+  transition: transform 1s;
+}
+
+.envelope.aberto .flap {
+  transform: rotateX(180deg);
+}
+
+.envelope .conteudo {
+  opacity: 0;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  transition: opacity 1s;
+}
+
+.envelope.aberto .conteudo {
+  opacity: 1;
+}
