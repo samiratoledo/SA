@@ -66,10 +66,12 @@ function aparecerAoScroll() {
   });
 }
 
+window.addEventListener('scroll', aparecerAoScroll);
+
 function abrirEnvelope() {
   document.querySelector(".envelope").classList.toggle("aberto");
 }
 
-window.addEventListener('scroll', aparecerAoScroll);
-
-
+document.getElementById("botao-secreto").addEventListener("click", function() {
+  alert("Achei que você não encontraria isso... Te amo 💖");
+});
