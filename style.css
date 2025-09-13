@@ -11,7 +11,7 @@
 
   h1 {
     margin-top: 30px;
-    font-size: 2.5em;
+    font-size: 2em;
     color: #d6336c;
   }
 
@@ -127,7 +127,7 @@
 
 /*envelope*/
 .envelope {
-  width: 300px;
+  width: 80vw;
   height: 120px;
   background: #ff8fab;
   margin: 30px auto;
@@ -221,5 +221,6 @@
   from { transform: translateY(0) rotate(45deg); opacity: 1; }
   to { transform: translate(500px, 500px) rotate(45deg); opacity: 0; }
 }
+
 
 
