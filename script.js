@@ -66,5 +66,10 @@ function aparecerAoScroll() {
   });
 }
 
+function abrirEnvelope() {
+  document.querySelector(".envelope").classList.toggle("aberto");
+}
+
 window.addEventListener('scroll', aparecerAoScroll);
+
 
