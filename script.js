@@ -25,7 +25,30 @@ function iniciarContador() {
   setInterval(atualizarContador, 1000);
 }
 
+//Corações caindo
+function criarCoracao() {
+  const container = document.getElementById("hearts-container");
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "❤️";
 
+  // posição horizontal aleatória
+  heart.style.left = Math.random() * 100 + "vw";
+  // tamanho aleatório
+  heart.style.fontSize = Math.random() * 20 + 15 + "px";
+  // duração da queda aleatória
+  heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+
+  container.appendChild(heart);
+
+  // remove o coração quando terminar a animação
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}
+
+// cria um coração novo a cada 300ms
+setInterval(criarCoracao, 300);
 
 
 
@@ -44,3 +67,4 @@ function aparecerAoScroll() {
 }
 
 window.addEventListener('scroll', aparecerAoScroll);
+
