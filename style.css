@@ -50,28 +50,6 @@
     color: #000;
   }
 
-  .galeria {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin: 20px;
-  }
-
-  .galeria img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 15px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-  }
-
-  .galeria img:hover {
-    transform: scale(1.1);
-  }
-
 .galeria {
   display: flex;
   justify-content: center;
@@ -129,8 +107,8 @@
 .heart {
   position: absolute;
   color: red;
-  font-size: 20px;
-  animation: fall linear forwards;
+  font-size: 15px;
+  animation: fall linear;
 }
 
 @keyframes fall {
@@ -239,3 +217,4 @@
 .envelope.aberto .conteudo {
   opacity: 1;
 }
+
