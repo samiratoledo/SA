@@ -107,25 +107,6 @@
   z-index: 9999;
 }
 
-.heart {
-  position: absolute;
-  color: red;
-  font-size: 15px;
-  animation: fall linear;
-}
-
-@keyframes fall {
-  from {
-    transform: translateY(-10vh) rotate(0deg);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(110vh) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-
   .historia {
     padding: 40px 20px;
     text-align: center;
@@ -236,5 +217,6 @@
 #botao-secreto:hover {
   opacity: 1;
 }
+
 
 
