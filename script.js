@@ -51,3 +51,40 @@ document.getElementById("botao-secreto").addEventListener("click", function() {
 });
 
 
+// 🌟 Estrelas normais
+const quantidadeEstrelas = 100;
+const estrelasContainer = document.getElementById("stars");
+
+for (let i = 0; i < quantidadeEstrelas; i++) {
+  const star = document.createElement("div");
+  star.classList.add("star");
+  star.style.top = Math.random() * 100 + "%";
+  star.style.left = Math.random() * 100 + "%";
+  const size = Math.random() * 3 + 1;
+  star.style.width = size + "px";
+  star.style.height = size + "px";
+  star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+  estrelasContainer.appendChild(star);
+}
+
+// 🌠 Estrelas cadentes
+function criarEstrelaCadente() {
+  const shootingStar = document.createElement("div");
+  shootingStar.classList.add("shooting-star");
+  shootingStar.style.top = Math.random() * 50 + "%";
+  shootingStar.style.left = "-10%";
+  shootingStar.style.width = Math.random() * 2 + 2 + "px";
+  shootingStar.style.height = Math.random() * 60 + 40 + "px";
+  shootingStar.style.animationDuration = Math.random() * 2 + 1.5 + "s";
+  estrelasContainer.appendChild(shootingStar);
+
+  // remove após a animação
+  setTimeout(() => {
+    shootingStar.remove();
+  }, 3000);
+}
+
+// Cria uma estrela cadente a cada 3-6 segundos
+setInterval(criarEstrelaCadente, 3000 + Math.random() * 3000);
+
+
