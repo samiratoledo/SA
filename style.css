@@ -136,7 +136,7 @@
 @keyframes fall {
   from {
     transform: translateY(-10vh) rotate(0deg);
-    opacity: 0.5;
+    opacity: 1;
   }
   to {
     transform: translateY(110vh) rotate(360deg);
@@ -200,4 +200,5 @@
     border-radius: 10px;
 
   }
+
 
