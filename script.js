@@ -73,5 +73,6 @@ function abrirEnvelope() {
 }
 
 document.getElementById("botao-secreto").addEventListener("click", function() {
-  alert("Achei que você não encontraria isso... Te amo 💖");
+  alert("Só te lembrando mais uma vez que eu te amo 💗");
 });
+
