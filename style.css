@@ -223,4 +223,11 @@
 }
 
 
+@media screen and (min-width: 720px) {
+    .timeline, .galeria {
+      flex-direction: row;
+  }
+}
+
+
 
